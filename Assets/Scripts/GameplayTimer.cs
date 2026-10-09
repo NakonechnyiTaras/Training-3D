@@ -1,31 +1,31 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem; 
 
-public class Timer : MonoBehaviour
+public class GameplayTimer : MonoBehaviour
 {
-    public static event Action OnMouseClick;
+    [SerializeField] private InputReader _inputReader;
 
+    private readonly WaitForSeconds _delay = new WaitForSeconds(0.5f);
     private int _counter = 0;
     private bool _isRunning = false;
     private Coroutine _counterCoroutine;
 
-    void OnEnable()
-    {
-        OnMouseClick += ToggleCounter;
-    }
+    public event Action<int> OnCounterChanged;
 
-    void OnDisable()
+    private void OnEnable()
     {
-        OnMouseClick -= ToggleCounter;
-    }
-
-     void Update()
-    {
-        if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        if (_inputReader != null)
         {
-            OnMouseClick?.Invoke();
+            _inputReader.OnLeftMouseClick += ToggleCounter;
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (_inputReader != null)
+        {
+            _inputReader.OnLeftMouseClick -= ToggleCounter;
         }
     }
 
@@ -42,6 +42,7 @@ public class Timer : MonoBehaviour
             if (_counterCoroutine != null)
             {
                 StopCoroutine(_counterCoroutine);
+                _counterCoroutine = null;
             }
         }
     }
@@ -51,10 +52,8 @@ public class Timer : MonoBehaviour
         while (_isRunning)
         {
             _counter++;
-
-            Debug.Log("Таймер: " + _counter);
-            
-            yield return new WaitForSeconds(0.5f);
+            OnCounterChanged?.Invoke(_counter);
+            yield return _delay;
         }
     }
 }

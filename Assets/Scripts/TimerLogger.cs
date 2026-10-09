@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class CustomTimerLogger : MonoBehaviour
+public class TimerLogger : MonoBehaviour
 {
-    [SerializeField] private CustomGameplayTimer _timer;
+    [SerializeField] private GameplayTimer _timer;
 
-    void OnEnable()
+    private void OnEnable()
     {
         if (_timer != null)
         {
@@ -12,7 +12,7 @@ public class CustomTimerLogger : MonoBehaviour
         }
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
         if (_timer != null)
         {

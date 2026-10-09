@@ -242,7 +242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 243093593}
   - component: {fileID: 243093594}
-  - component: {fileID: 243093595}
   m_Layer: 0
   m_Name: '[LOGIC_Timer]'
   m_TagString: Untagged
@@ -274,23 +273,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 243093592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97fb576a9e9ca148bb8d03d8867c20b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomGameplayTimer
-  _inputReader: {fileID: 1098644570}
---- !u!114 &243093595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243093592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2ea9ea9394a0e748a0c05c26716005e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameplayTimer
-  _inputReader: {fileID: 1098644571}
+  _inputReader: {fileID: 1098644570}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +636,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1098644569}
   - component: {fileID: 1098644570}
-  - component: {fileID: 1098644571}
   m_Layer: 0
   m_Name: '[INPUT]'
   m_TagString: Untagged
@@ -682,21 +667,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098644568}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd24c1753862c034f8e61c32313acd6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomInputReader
---- !u!114 &1098644571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098644568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b566eaa1510a675419561745f6114dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputReader
+  _clickActionReference: {fileID: 0}
 --- !u!1 &1440440236 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 16e5fe0265c2fe34d9614aa16213696e, type: 3}
@@ -1061,7 +1035,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1975801879}
   - component: {fileID: 1975801880}
-  - component: {fileID: 1975801881}
   m_Layer: 0
   m_Name: '[UI_Timer]'
   m_TagString: Untagged
@@ -1093,23 +1066,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1975801878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96426a07987ed7d4c9b431bfd35f1267, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomTimerLogger
-  _timer: {fileID: 243093594}
---- !u!114 &1975801881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975801878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91a15643e9727fe44872ddf3ed798f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimerLogger
-  _timer: {fileID: 243093595}
+  _timer: {fileID: 243093594}
 --- !u!1 &2089436000
 GameObject:
   m_ObjectHideFlags: 0
