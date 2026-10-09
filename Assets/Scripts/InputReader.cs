@@ -6,7 +6,7 @@ public class InputReader : MonoBehaviour
 {
     private InputAction _clickAction;
 
-    public event Action OnLeftMouseClick;
+    public event Action LeftMouseClicked;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class InputReader : MonoBehaviour
         if (_clickAction != null)
         {
             _clickAction.Enable();
-            _clickAction.performed += OnClickPerformed;
+            _clickAction.started += OnClickPerformed;
         }
     }
 
@@ -26,13 +26,13 @@ public class InputReader : MonoBehaviour
     {
         if (_clickAction != null)
         {
-            _clickAction.performed -= OnClickPerformed;
+            _clickAction.started -= OnClickPerformed;
             _clickAction.Disable();
         }
     }
 
     private void OnClickPerformed(InputAction.CallbackContext context)
     {
-        OnLeftMouseClick?.Invoke();
+        LeftMouseClicked?.Invoke();
     }
 }
